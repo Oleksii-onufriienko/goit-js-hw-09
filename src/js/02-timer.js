@@ -1,5 +1,6 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const REFRESH_INTERVAL = 1000;
 let timerId = null;
@@ -13,7 +14,7 @@ const options = {
   onClose(selectedDates) {
     const currentDate = new Date();
     if (currentDate >= selectedDates[0]) {
-      window.alert('Please choose a date in the future');
+      Notify.warning('Please choose a date in the future');
       refs.buttonStart.disabled = true;
       return;
     }
@@ -64,7 +65,7 @@ function refreshScreen() {
     clearTimeout(timerId);
     refs.inputField.disabled = false;
     refs.buttonStart.disabled = true;
-    console.log('Finish!');
+    Notify.success('Congratulations! Action finished!');
     return;
   }
 }
