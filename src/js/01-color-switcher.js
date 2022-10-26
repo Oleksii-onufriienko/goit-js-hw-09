@@ -15,6 +15,7 @@ refs.buttonStart.addEventListener('click', () => {
   if (idFunctionInterval) {
     return;
   }
+
   idFunctionInterval = setInterval(() => {
     refs.body.style.backgroundColor = getRandomHexColor();
   }, TIME_DELAY);
