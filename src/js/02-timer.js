@@ -38,7 +38,7 @@ for (const i of refs.valueAllLabel) {
     i.textContent = '';
     continue;
   }
-  i.textContent = ':'.padEnd(1, ' ');
+  i.textContent = ':';
 }
 
 refs.valueAllLabel.textContent = ':';
