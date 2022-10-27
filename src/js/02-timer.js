@@ -46,6 +46,7 @@ refs.buttonStart.disabled = true;
 refs.buttonStart.addEventListener('click', () => {
   refs.inputField.disabled = true;
   refs.buttonStart.disabled = true;
+  refreshScreen();
   timerId = setInterval(refreshScreen, REFRESH_INTERVAL);
 });
 
@@ -61,7 +62,7 @@ function refreshScreen() {
   refs.valueMinutes.textContent = addLeadingZero(minutes);
   refs.valueSeconds.textContent = addLeadingZero(seconds);
 
-  if (days + hours + minutes + seconds === 0) {
+  if (deltaTime < 1000) {
     clearTimeout(timerId);
     refs.inputField.disabled = false;
     refs.buttonStart.disabled = true;

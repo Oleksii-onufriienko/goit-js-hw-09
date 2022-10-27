@@ -16,6 +16,8 @@ refs.buttonStart.addEventListener('click', () => {
     return;
   }
 
+  refs.body.style.backgroundColor = getRandomHexColor();
+
   idFunctionInterval = setInterval(() => {
     refs.body.style.backgroundColor = getRandomHexColor();
   }, TIME_DELAY);
